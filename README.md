@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Acceso exclusivo</title>
+  <title>Acceso Exclusivo</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     * { font-family: Arial, sans-serif; }
@@ -11,9 +11,11 @@
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-  <header class="bg-white shadow p-4 flex justify-between">
+  <header class="bg-white shadow p-4 flex justify-between items-center">
     <h1 class="text-xl font-bold">🎯 Acceso Exclusivo</h1>
-    <button id="open-sub-modal" class="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">Suscribirse</button>
+    <button id="open-sub-modal" class="bg-red-600 text-white px-4 py-2 rounded-lg font-semibold">
+      Suscribirse
+    </button>
   </header>
 
   <main class="max-w-2xl mx-auto p-6 text-center">
@@ -28,17 +30,21 @@
       <h3 class="text-xl font-bold mb-2">Verificación de pasos</h3>
       <p class="text-sm text-gray-600 mb-4">Completa cada paso para desbloquear el contenido.</p>
 
-      <!-- Paso 1: Like -->
+      <!-- Paso 1 -->
       <div id="like-step">
-        <button id="open-video" class="bg-red-600 text-white px-5 py-3 rounded-lg font-semibold">Dar like al video</button>
+        <button id="open-video" class="bg-red-600 text-white px-5 py-3 rounded-lg font-semibold">
+          Dar like al video
+        </button>
       </div>
 
-      <!-- Paso 2: No soy un robot -->
+      <!-- Paso 2 -->
       <div id="robot-check" class="hidden mt-4">
-        <button id="not-robot" class="px-5 py-3 rounded-lg border-2 border-gray-500 font-semibold">No soy un robot</button>
+        <button id="not-robot" class="px-5 py-3 rounded-lg border-2 border-gray-500 font-semibold">
+          No soy un robot
+        </button>
       </div>
 
-      <!-- Paso 3: Progreso -->
+      <!-- Paso 3 -->
       <div id="progress-area" class="hidden mt-4">
         <p class="text-sm mb-2">Espera 7 segundos...</p>
         <div class="w-full bg-gray-200 rounded-full h-3">
@@ -46,36 +52,57 @@
         </div>
       </div>
 
-      <!-- Paso 4: Grupo WhatsApp -->
+      <!-- Paso 4 -->
       <div id="whatsapp-area" class="hidden mt-4">
         <p class="text-sm mb-2">Únete a nuestro grupo de WhatsApp:</p>
-        <a id="whatsapp-btn" href="https://chat.whatsapp.com/HkmNRGbee4x4hDOmCBNfAN" target="_blank" class="bg-green-600 text-white px-5 py-3 rounded-lg font-semibold inline-block">Unirme al grupo</a>
+        <a id="whatsapp-btn" href="https://chat.whatsapp.com/HkmNRGbee4x4hDOmCBNfAN"
+           target="_blank" class="bg-green-600 text-white px-5 py-3 rounded-lg font-semibold inline-block">
+           Unirme al grupo
+        </a>
         <div class="mt-4 hidden" id="continue-wrapper">
-          <button id="continue-btn" class="bg-blue-600 text-white px-5 py-3 rounded-lg font-semibold">Seguir</button>
+          <button id="continue-btn" class="bg-blue-600 text-white px-5 py-3 rounded-lg font-semibold">
+            Seguir
+          </button>
         </div>
       </div>
 
-      <!-- Paso 5: Canal -->
+      <!-- Paso 5 -->
       <div id="channel-area" class="hidden mt-4">
         <p class="text-sm mb-2">Únete a nuestro canal:</p>
-        <a id="channel-btn" href="https://whatsapp.com/channel/0029VbBBxkN1yT20bpPJnU23" target="_blank" class="bg-purple-600 text-white px-5 py-3 rounded-lg font-semibold inline-block">Unirme al canal</a>
+        <a id="channel-btn" href="https://whatsapp.com/channel/0029VbBBxkN1yT20bpPJnU23"
+           target="_blank" class="bg-purple-600 text-white px-5 py-3 rounded-lg font-semibold inline-block">
+           Unirme al canal
+        </a>
         <div class="mt-4 hidden" id="channel-continue-wrapper">
-          <button id="channel-continue-btn" class="bg-blue-600 text-white px-5 py-3 rounded-lg font-semibold">Seguir</button>
+          <button id="channel-continue-btn" class="bg-blue-600 text-white px-5 py-3 rounded-lg font-semibold">
+            Seguir
+          </button>
         </div>
       </div>
 
-      <!-- Paso 6: Descarga -->
+      <!-- Paso 6 -->
       <div id="download-area" class="hidden mt-4">
         <p class="text-sm mb-2">¡Listo! Ahora puedes descargar:</p>
-        <a id="download-link" href="https://www.mediafire.com/file/7xjd6679nasbd68/Panel+AimKill+ACTUALIZADO+SIN+BANEO.7z/file" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-5 py-3 rounded-lg font-semibold inline-block">Descargar ahora</a>
+        <button id="download-btn" class="bg-green-600 text-white px-5 py-3 rounded-lg font-semibold">
+          Descargar ahora
+        </button>
       </div>
     </div>
   </div>
 
   <script>
+    // === CONFIGURACIÓN ===
     const CHANNEL_URL = "https://www.youtube.com/@jk-trick2625";
     const VIDEO_URL   = "https://youtu.be/HkVFN1h6GSU?si=bvrFVbWG4lGspoEs";
 
+    // 🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽🔽
+    // 👉 AQUÍ DEBES PONER TU ENLACE DE MEDIAFIRE 👇
+    // Ejemplo:
+    // const MEDIAFIRE_URL = "https://www.mediafire.com/file/XXXXXXXXXX/MI_ARCHIVO.zip/file";
+    const MEDIAFIRE_URL = "https://www.mediafire.com/file/7xjd6679nasbd68/Panel+AimKill+ACTUALIZADO+SIN+BANEO.7z/file";
+    // 🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼🔼
+
+    // === ELEMENTOS ===
     const modal = document.getElementById('subscribe-modal');
     const openGateBtn = document.getElementById('open-gate');
     const openVideoBtn = document.getElementById('open-video');
@@ -90,12 +117,26 @@
     const channelContinueWrapper = document.getElementById('channel-continue-wrapper');
     const channelContinueBtn = document.getElementById('channel-continue-btn');
     const downloadArea = document.getElementById('download-area');
+    const downloadBtn = document.getElementById('download-btn');
 
-    function showModal() { modal.classList.remove('hidden'); }
+    function showModal() {
+      modal.classList.remove('hidden');
+    }
 
-    openGateBtn.addEventListener('click', () => { showModal(); window.open(CHANNEL_URL, '_blank'); });
-    document.getElementById('open-sub-modal').addEventListener('click', () => { showModal(); window.open(CHANNEL_URL, '_blank'); });
-    openVideoBtn.addEventListener('click', () => { window.open(VIDEO_URL, '_blank'); robotCheck.classList.remove('hidden'); });
+    openGateBtn.addEventListener('click', () => {
+      showModal();
+      window.open(CHANNEL_URL, '_blank');
+    });
+
+    document.getElementById('open-sub-modal').addEventListener('click', () => {
+      showModal();
+      window.open(CHANNEL_URL, '_blank');
+    });
+
+    openVideoBtn.addEventListener('click', () => {
+      window.open(VIDEO_URL, '_blank');
+      robotCheck.classList.remove('hidden');
+    });
 
     notRobotBtn.addEventListener('click', () => {
       robotCheck.classList.add('hidden');
@@ -104,7 +145,7 @@
       const interval = setInterval(() => {
         progress += 1;
         progressBar.style.width = progress + '%';
-        if(progress >= 100){
+        if (progress >= 100) {
           clearInterval(interval);
           progressArea.classList.add('hidden');
           whatsappArea.classList.remove('hidden');
@@ -112,10 +153,29 @@
       }, 70);
     });
 
-    document.getElementById('whatsapp-btn').addEventListener('click', () => { continueWrapper.classList.remove('hidden'); });
-    continueBtn.addEventListener('click', () => { whatsappArea.classList.add('hidden'); channelArea.classList.remove('hidden'); });
-    document.getElementById('channel-btn').addEventListener('click', () => { channelContinueWrapper.classList.remove('hidden'); });
-    channelContinueBtn.addEventListener('click', () => { channelArea.classList.add('hidden'); downloadArea.classList.remove('hidden'); });
+    document.getElementById('whatsapp-btn').addEventListener('click', () => {
+      continueWrapper.classList.remove('hidden');
+    });
+
+    continueBtn.addEventListener('click', () => {
+      whatsappArea.classList.add('hidden');
+      channelArea.classList.remove('hidden');
+    });
+
+    document.getElementById('channel-btn').addEventListener('click', () => {
+      channelContinueWrapper.classList.remove('hidden');
+    });
+
+    channelContinueBtn.addEventListener('click', () => {
+      channelArea.classList.add('hidden');
+      downloadArea.classList.remove('hidden');
+    });
+
+    // ✅ ESTE BOTÓN AHORA ABRE EL LINK DE MEDIAFIRE SIN RECARGAR LA PÁGINA
+    downloadBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open(MEDIAFIRE_URL, '_blank');
+    });
   </script>
 </body>
 </html>
