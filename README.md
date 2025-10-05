@@ -66,8 +66,8 @@
 
       <!-- Paso 6: Descarga -->
       <div id="download-area" class="hidden mt-4">
-        <p class="text-sm mb-2">¡Listo! Ahora puedes acceder:</p>
-        <a id="download-link" href="https://www.mediafire.com/file/7xjd6679nasbd68/Panel+AimKill+ACTUALIZADO+SIN+BANEO.7z/file" target="_blank" class="bg-green-600 text-white px-5 py-3 rounded-lg font-semibold inline-block">Descargar ahora</a>
+        <p class="text-sm mb-2">¡Listo! Ahora puedes descargar:</p>
+        <a id="download-link" href="https://www.mediafire.com/file/7xjd6679nasbd68/Panel+AimKill+ACTUALIZADO+SIN+BANEO.7z/file" target="_blank" rel="noopener noreferrer" class="bg-green-600 text-white px-5 py-3 rounded-lg font-semibold inline-block">Descargar ahora</a>
       </div>
     </div>
   </div>
