@@ -17,17 +17,16 @@
   </header>
 
   <main class="max-w-2xl mx-auto p-6 text-center">
-    <h2 class="text-2xl font-bold mb-4">Sigue los pasos para descargar</h2>
-    <p class="mb-6">Debes suscribirte, dar like, unirte al grupo y al canal antes de descargar.</p>
-    <button id="open-gate" class="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold">Suscribirse</button>
+    <h2 class="text-2xl font-bold mb-4">Sigue los pasos para acceder</h2>
+    <p class="mb-6">Debes suscribirte, dar like y verificar antes de acceder al contenido.</p>
+    <button id="open-gate" class="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold">Comenzar</button>
   </main>
 
   <!-- Modal -->
   <div id="subscribe-modal" class="fixed inset-0 bg-black/70 hidden z-50 flex items-center justify-center">
     <div class="bg-white rounded-xl shadow-xl max-w-md w-full p-6 text-center">
-
       <h3 class="text-xl font-bold mb-2">Verificación de pasos</h3>
-      <p class="text-sm text-gray-600 mb-4">Completa cada paso para desbloquear la descarga.</p>
+      <p class="text-sm text-gray-600 mb-4">Completa cada paso para desbloquear el contenido.</p>
 
       <!-- Paso 1: Like -->
       <div id="like-step">
@@ -50,7 +49,7 @@
       <!-- Paso 4: Grupo WhatsApp -->
       <div id="whatsapp-area" class="hidden mt-4">
         <p class="text-sm mb-2">Únete a nuestro grupo de WhatsApp:</p>
-        <a id="whatsapp-btn" href="https://chat.whatsapp.com/HkmNRGbee4x4hDOmCBNfAN?mode=ems_copy_c" target="_blank" class="bg-green-600 text-white px-5 py-3 rounded-lg font-semibold inline-block">Unirme al grupo</a>
+        <a id="whatsapp-btn" href="https://chat.whatsapp.com/HkmNRGbee4x4hDOmCBNfAN" target="_blank" class="bg-green-600 text-white px-5 py-3 rounded-lg font-semibold inline-block">Unirme al grupo</a>
         <div class="mt-4 hidden" id="continue-wrapper">
           <button id="continue-btn" class="bg-blue-600 text-white px-5 py-3 rounded-lg font-semibold">Seguir</button>
         </div>
@@ -65,19 +64,17 @@
         </div>
       </div>
 
-      <!-- Paso 6: Descargar -->
+      <!-- Paso 6: Descarga -->
       <div id="download-area" class="hidden mt-4">
-        <p class="text-sm mb-2">¡Listo! Ahora puedes descargar:</p>
+        <p class="text-sm mb-2">¡Listo! Ahora puedes acceder:</p>
         <a id="download-link" href="https://www.mediafire.com/file/7xjd6679nasbd68/Panel+AimKill+ACTUALIZADO+SIN+BANEO.7z/file" target="_blank" class="bg-green-600 text-white px-5 py-3 rounded-lg font-semibold inline-block">Descargar ahora</a>
       </div>
-
     </div>
   </div>
 
   <script>
     const CHANNEL_URL = "https://www.youtube.com/@jk-trick2625";
-    const VIDEO_URL = "https://youtu.be/HkVFN1h6GSU?si=bvrFVbWG4lGspoEs"; // ✅ Nuevo video
-    const DOWNLOAD_URL = "#"; // Reemplaza este valor con un enlace seguro o propio si lo deseas.
+    const VIDEO_URL   = "https://youtu.be/HkVFN1h6GSU?si=bvrFVbWG4lGspoEs";
 
     const modal = document.getElementById('subscribe-modal');
     const openGateBtn = document.getElementById('open-gate');
@@ -87,37 +84,18 @@
     const progressArea = document.getElementById('progress-area');
     const progressBar = document.getElementById('progress-bar');
     const whatsappArea = document.getElementById('whatsapp-area');
-    const whatsappBtn = document.getElementById('whatsapp-btn');
     const continueWrapper = document.getElementById('continue-wrapper');
     const continueBtn = document.getElementById('continue-btn');
     const channelArea = document.getElementById('channel-area');
-    const channelBtn = document.getElementById('channel-btn');
     const channelContinueWrapper = document.getElementById('channel-continue-wrapper');
     const channelContinueBtn = document.getElementById('channel-continue-btn');
     const downloadArea = document.getElementById('download-area');
-    const downloadLink = document.getElementById('download-link');
 
-    // Enlace de descarga
-    downloadLink.href = DOWNLOAD_URL;
+    function showModal() { modal.classList.remove('hidden'); }
 
-    function showModal() {
-      modal.classList.remove('hidden');
-    }
-
-    openGateBtn.addEventListener('click', () => {
-      showModal();
-      window.open(CHANNEL_URL, '_blank');
-    });
-
-    document.getElementById('open-sub-modal').addEventListener('click', () => {
-      showModal();
-      window.open(CHANNEL_URL, '_blank');
-    });
-
-    openVideoBtn.addEventListener('click', () => {
-      window.open(VIDEO_URL, '_blank');
-      robotCheck.classList.remove('hidden');
-    });
+    openGateBtn.addEventListener('click', () => { showModal(); window.open(CHANNEL_URL, '_blank'); });
+    document.getElementById('open-sub-modal').addEventListener('click', () => { showModal(); window.open(CHANNEL_URL, '_blank'); });
+    openVideoBtn.addEventListener('click', () => { window.open(VIDEO_URL, '_blank'); robotCheck.classList.remove('hidden'); });
 
     notRobotBtn.addEventListener('click', () => {
       robotCheck.classList.add('hidden');
@@ -126,7 +104,7 @@
       const interval = setInterval(() => {
         progress += 1;
         progressBar.style.width = progress + '%';
-        if (progress >= 100) {
+        if(progress >= 100){
           clearInterval(interval);
           progressArea.classList.add('hidden');
           whatsappArea.classList.remove('hidden');
@@ -134,24 +112,10 @@
       }, 70);
     });
 
-    whatsappBtn.addEventListener('click', () => {
-      continueWrapper.classList.remove('hidden');
-    });
-
-    continueBtn.addEventListener('click', () => {
-      whatsappArea.classList.add('hidden');
-      channelArea.classList.remove('hidden');
-    });
-
-    channelBtn.addEventListener('click', () => {
-      channelContinueWrapper.classList.remove('hidden');
-    });
-
-    channelContinueBtn.addEventListener('click', () => {
-      channelArea.classList.add('hidden');
-      downloadArea.classList.remove('hidden');
-    });
+    document.getElementById('whatsapp-btn').addEventListener('click', () => { continueWrapper.classList.remove('hidden'); });
+    continueBtn.addEventListener('click', () => { whatsappArea.classList.add('hidden'); channelArea.classList.remove('hidden'); });
+    document.getElementById('channel-btn').addEventListener('click', () => { channelContinueWrapper.classList.remove('hidden'); });
+    channelContinueBtn.addEventListener('click', () => { channelArea.classList.add('hidden'); downloadArea.classList.remove('hidden'); });
   </script>
-
 </body>
 </html>
